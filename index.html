@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -104,7 +105,7 @@
    <div class="container">
      <div class="row">
        <div class="col-lg-6">
-         <img id="img_bulb" style="height: 380px; width: 390px;" class="img-responsive center-block" src="assets/img/responsive design.svg" alt="">
+         <img id="assets/img/aryan.jpg" style="height: 380px; width: 390px;" class="img-responsive center-block" src="assets/img/responsive design.svg" alt="">
        </div>
        <div class="col-lg-4">
          <h2 id="hero_name" class="text-center"><u>Hobbies</u></h2>
@@ -469,5 +470,16 @@ $(document).ready(function(){
 <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 <script src="js/app.js" type="text/javascript"></script>
 <script src="js/particles.min.js" type="text/javascript"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>
